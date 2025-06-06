@@ -37,7 +37,7 @@ for produto in lista_produtos:
         qtd = st.number_input(
             "Qtd:", min_value=1, max_value=produto["quantidade"], value=1, step=1, key=key_input
         )
-        if st.button("Adicionar ao carrinho", key=f"add_{produto['id']}"):
+        if st.button("🛒 Adicionar ao carrinho", key=f"add_{produto['id']}"):
             carrinho = st.session_state["carrinho"]
             st.session_state["compra_sucesso"] = False
             qtd_no_carrinho = carrinho.get(produto['id'], {}).get('quantidade', 0)
@@ -53,7 +53,7 @@ for produto in lista_produtos:
                         "quantidade": qtd
                     }
                 st.success(f"{qtd}x {produto['nome']} adicionado(s) ao carrinho!")
-        if st.button("Remover do carrinho", key=f"remove_{produto['id']}"):
+        if st.button("🛒 Remover do carrinho", key=f"remove_{produto['id']}"):
             st.session_state["compra_sucesso"] = False
             carrinho = st.session_state["carrinho"]
             if produto['id'] in carrinho:
