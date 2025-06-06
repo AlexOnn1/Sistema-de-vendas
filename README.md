@@ -9,19 +9,30 @@ Este projeto simula um sistema de venda de produtos com carrinho de compras, des
 ## Estrutura do Projeto
 
 ```
-Venda-De-Produtos/
+Sistema-de-vendas/
 │
-├── app.py
-├── source/
-│   └── images/
-│       └── produtos/
-│           ├── coffee1.jpg
-│           ├── juice1.jpg
-│           ├── bread1.jpg
-│           └── milk1.jpg
-└── README.md
+├── README.md
+└── app/
+    ├── app.py
+    ├── ideias.py
+    ├── requirements.txt
+    └── source/
+        └── images/
+            ├── produtos/
+            │   ├── coffee1.jpg
+            │   ├── juice1.jpg
+            │   ├── bread1.jpg
+            │   └── milk1.jpg
+            └── prints/
+                ├── print1.png
+                ├── print2.png
+                ├── print3.png
+                └── print4.png
 ```
-
+- **app/app.py**: Código principal do sistema.
+- **app/source/images/produtos/**: Imagens dos produtos exibidos na loja.
+- **app/source/images/prints/**: Prints de tela para documentação/apresentação.
+- **README.md**: Documentação do projeto.
 ---
 
 ## Como Executar
@@ -38,6 +49,7 @@ Venda-De-Produtos/
 
 3. **Acesse o endereço exibido no terminal (geralmente http://localhost:8501).**
 
+4.**OU Acesse pelo link: https://sistema-de-vendas-1p.streamlit.app/ (para facilitar sua vida).**
 ---
 
 ## Explicação do Código 💻
@@ -176,22 +188,22 @@ O valor total e o valor de cada parcela são exibidos automaticamente ao selecio
 1. **Tela principal:**  
    Exibe todos os produtos disponíveis para venda, com imagem, descrição, preço e estoque.
    
-   ![Tela principal](source/images/prints/print1.png)
+   ![Tela principal](app/source/images/prints/print1.png)
 
 2. **Produtos sendo adicionados ao carrinho:**  
    Mostra o carrinho na barra lateral sendo atualizado conforme os produtos são adicionados.
    
-   ![Adicionando produtos ao carrinho](source/images/prints/print2.png)
+   ![Adicionando produtos ao carrinho](app/source/images/prints/print2.png)
 
 3. **Sistema de pagamentos e opções de parcelamento:**  
    Exibe as opções de pagamento, incluindo parcelamento com cálculo automático de juros e valor das parcelas.
    
-   ![Sistema de pagamentos](source/images/prints/print3.png)
+   ![Sistema de pagamentos](app/source/images/prints/print3.png)
 
 4. **Carrinho limpo após o término da compra:**  
    Após finalizar a compra, o sistema mostra uma mensagem de sucesso e o carrinho é automaticamente limpo, pronto para uma nova compra.
    
-   ![Carrinho limpo após compra](source/images/prints/print4.png)
+   ![Carrinho limpo após compra](app/source/images/prints/print4.png)
 
 ---
 
