@@ -13,42 +13,46 @@ st.title("Produtos à venda")
 if "carrinho" not in st.session_state:
     st.session_state["carrinho"] = {}
 
+#função de validação no carrinho
 for produto in lista_produtos:
     col1, col2 = st.columns([1.5, 1.5])
     with col1:
         st.write(f"**{produto['nome']}**")
         st.image(produto["imagem"])     
-        
         st.write(produto["descricao"])
         st.write(f"R$ {produto['valor']:.2f}")
         st.write("")
-    # with col10:
-    #     st.image(produto["imagem"])    
     with col2:
         key_input = f"input_{produto['id']}"
         qtd = st.number_input(
             "Qtd:", min_value=1, max_value=produto["quantidade"], value=1, step=1, key=key_input
         )
         if st.button("Adicionar ao carrinho", key=f"add_{produto['id']}"):
-            if produto['id'] in st.session_state["carrinho"]:
-                st.session_state["carrinho"][produto['id']]['quantidade'] += qtd
+            carrinho = st.session_state["carrinho"]
+            qtd_no_carrinho = carrinho.get(produto['id'], {}).get('quantidade', 0)
+            if qtd_no_carrinho + qtd > produto["quantidade"]:
+                st.warning(f"Não é possível adicionar mais do que o estoque disponível ({produto['quantidade']}).")
             else:
-                st.session_state["carrinho"][produto['id']] = {
-                    "nome": produto["nome"],
-                    "valor": produto["valor"],
-                    "quantidade": qtd
-                }
-            st.success(f"{qtd}x {produto['nome']} adicionado(s) ao carrinho!")
+                if produto['id'] in carrinho:
+                    carrinho[produto['id']]['quantidade'] += qtd
+                else:
+                    carrinho[produto['id']] = {
+                        "nome": produto["nome"],
+                        "valor": produto["valor"],
+                        "quantidade": qtd
+                    }
+                st.success(f"{qtd}x {produto['nome']} adicionado(s) ao carrinho!")
         if st.button("Remover do carrinho", key=f"remove_{produto['id']}"):
-            if produto['id'] in st.session_state["carrinho"]:
-                st.session_state["carrinho"][produto['id']]['quantidade'] -= qtd
+            carrinho = st.session_state["carrinho"]
+            if produto['id'] in carrinho:
+                if carrinho[produto['id']]['quantidade'] <= qtd:
+                    del carrinho[produto['id']]
+                    st.success(f"{produto['nome']} removido do carrinho!")
+                else:
+                    carrinho[produto['id']]['quantidade'] -= qtd
+                    st.success(f"{qtd}x {produto['nome']} removido(s) do carrinho!")
             else:
-                st.session_state["carrinho"][produto['id']] = {
-                    "nome": produto["nome"],
-                    "valor": produto["valor"],
-                    "quantidade": qtd
-                }
-            st.success(f"{qtd}x {produto['nome']} Removido(s) ao carrinho!")        
+                st.warning(f"{produto['nome']} não está no carrinho.")
 
 # Carrinho de compras na barra lateral
 st.sidebar.title("Carrinho de Compras")
