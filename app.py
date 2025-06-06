@@ -4,8 +4,7 @@ lista_produtos = [
     {"nome": "Café", "valor": 17.50, "quantidade": 20, "descricao": "Um cafézinho bem bom", "id": "01", "imagem": "https://placehold.co/100x100"},
     {"nome": "Suco", "valor": 7.50, "quantidade": 10, "descricao": "Um suquinho bem bom", "id": "02", "imagem": "https://placehold.co/100x100"},
     {"nome": "Pão", "valor": 2.50, "quantidade": 245, "descricao": "Um pãozinho bem bom", "id": "03", "imagem": "https://placehold.co/100x100"},
-    {"nome": "Leite", "valor": 20, "quantidade": 30, "descricao": "Um leitinho bem bom", "id": "04", "imagem": "https://placehold.co/100x100"},
-    {"nome": "Docinho de bubu", "valor": 450, "quantidade": 1, "descricao": "B u b u", "id": "05", "imagem": "https://placehold.co/100x100"}
+    {"nome": "Leite", "valor": 20, "quantidade": 30, "descricao": "Um leitinho bem bom", "id": "04", "imagem": "https://placehold.co/100x100"}
 ]
 def concluir_pagamento():
     st.session_state["carrinho"] = {}
@@ -144,10 +143,7 @@ if st.session_state.get("processar_pagamento", False):
     st.session_state["processar_pagamento"] = False
     st.experimental_rerun()
 
-# Card de sucesso após o pagamento (sempre fora do bloco do carrinho)
+# Card de sucesso após o pagamento
 if st.session_state.get("compra_sucesso", False):
     st.sidebar.markdown("---")
     st.sidebar.success("✅ Compra realizada com sucesso! Obrigado pela preferência. 🎉")
-    # NÃO resete a flag aqui!
-    # Ela só será resetada quando o usuário fizer uma nova ação
-
