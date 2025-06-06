@@ -49,7 +49,7 @@ Sistema-de-vendas/
 
 3. **Acesse o endereço exibido no terminal (geralmente http://localhost:8501).**
 
-4.**OU Acesse pelo link: https://sistema-de-vendas-1p.streamlit.app/ (para facilitar sua vida).**
+4.**OU Acesse pelo link: https://sistema-de-vendas.streamlit.app/ (para facilitar sua vida).**
 ---
 
 ## Explicação do Código 💻
