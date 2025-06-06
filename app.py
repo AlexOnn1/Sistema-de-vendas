@@ -1,10 +1,10 @@
 import streamlit as st
 
 lista_produtos = [
-    {"nome": "Café", "valor": 17.50, "quantidade": 20, "descricao": "Um cafézinho bem bom", "id": "01", "imagem": "https://placehold.co/100x100"},
-    {"nome": "Suco", "valor": 7.50, "quantidade": 10, "descricao": "Um suquinho bem bom", "id": "02", "imagem": "https://placehold.co/100x100"},
-    {"nome": "Pão", "valor": 2.50, "quantidade": 245, "descricao": "Um pãozinho bem bom", "id": "03", "imagem": "https://placehold.co/100x100"},
-    {"nome": "Leite", "valor": 20, "quantidade": 30, "descricao": "Um leitinho bem bom", "id": "04", "imagem": "https://placehold.co/100x100"}
+    {"nome": "Café", "valor": 17.50, "quantidade": 20, "descricao": "Um cafézinho bem bom", "id": "01", "imagem": "source/images/produtos/coffee1.jpg"},
+    {"nome": "Suco", "valor": 7.50, "quantidade": 10, "descricao": "Um suquinho bem bom", "id": "02", "imagem": "source/images/produtos/juice1.jpg"},
+    {"nome": "Pão", "valor": 2.50, "quantidade": 245, "descricao": "Um pãozinho bem bom", "id": "03", "imagem": "source/images/produtos/bread1.jpg"},
+    {"nome": "Leite", "valor": 20, "quantidade": 30, "descricao": "Um leitinho bem bom", "id": "04", "imagem": "source/images/produtos/milk1.jpg"}
 ]
 def concluir_pagamento():
     st.session_state["carrinho"] = {}
