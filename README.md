@@ -207,15 +207,4 @@ O valor total e o valor de cada parcela são exibidos automaticamente ao selecio
 
 ---
 
-## Dicas para Apresentação (segundo a i.a 🤓🤓)
-
-- Explique o fluxo: adicionar/remover produtos, visualizar o carrinho, escolher a forma de pagamento, finalizar compra.
-- Mostre como o sistema impede adicionar mais itens do que o estoque.
-- Demonstre o cálculo automático de juros e parcelas.
-- Destaque a experiência do usuário: mensagem de sucesso e carrinho pronto para nova compra.
-- Mostre o código e explique o uso de variáveis de sessão para controle de estado.
-
-
----
-
 Projeto para fins didáticos e de prática de lógica de programação com Python e Streamlit.
